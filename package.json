@@ -1,0 +1,23 @@
+{
+  "devDependencies": {
+    "@cypress/xpath": "^2.0.3",
+    "@testing-library/cypress": "^9.0.0",
+    "cypress": "^12.17.4",
+    "typescript": "^5.2.2"
+  },
+  "scripts": {
+    "cypress:open": "cypress open --browser chrome --e2e --config-file ./configurations/config.ts",
+    "cypress:open:test": "cypress open --browser chrome --e2e --config-file ./configurations/test-site-config.ts --env OrgId=13",
+    "cypress:open:dev": "cypress open --browser chrome --e2e --config-file ./configurations/dev-site-config.ts --env OrgId=13",
+    "cypress:open:prod": "cypress open --browser chrome --e2e --config-file ./configurations/prod-site-config.ts",
+    "cypress:run": "cypress run --config-file ./configurations/config.ts",
+    "cypress:run:test": "cypress run --config-file ./configurations/test-site-config.ts --env OrgId=13",
+    "cypress:run:dev": "cypress run --config-file ./configurations/dev-site-config.ts --env OrgId=13",
+    "cypress:run:prod": "cypress run --config-file ./configurations/prod-site-config.ts"
+  },
+  "dependencies": {
+    "@4tw/cypress-drag-drop": "^2.2.3",
+    "cypress-xpath": "^2.0.1",
+    "dayjs": "^1.11.9"
+  }
+}
