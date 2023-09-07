@@ -14,7 +14,16 @@
 // ***********************************************************
 
 // Import commands.js using ES2015 syntax:
-import './commands'
-require('@cypress/xpath');
+import "./commands";
+require("@cypress/xpath");
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
+
+Cypress.on("window:before:load", async (win) => {
+  console.log("Adding Dummi snippet");
+  const doc = win.document;
+  const script = doc.createElement("script");
+  script.type = "module";
+  script.src = "http://localhost:4300/snippet.js";
+  doc.getElementsByTagName("head")[0].append(script);
+});
